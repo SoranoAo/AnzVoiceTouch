@@ -10,7 +10,7 @@
     <GridView
         android:id="@+id/voice_grid_view"
         android:layout_width="0dp"
-        android:layout_height="446dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:columnWidth="96dp"
