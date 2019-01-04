@@ -63,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
         this.voiceGridView.setAdapter(gridViewAdapter);
 
 
-        //テスツ用コード
+        //テスト用コード
         //TODO あとでテスト用コード消すこと
         for(int i = 0 ; i < 10; i++) {
             VoiceAdapterItem sampleVoiceAdapterItem = new VoiceAdapterItem();
-            sampleVoiceAdapterItem.setTitile("いーも");
+            sampleVoiceAdapterItem.setTitile("いーも"+ i);
             sampleVoiceAdapterItem.setVoiceImage(ResourcesCompat.getDrawable(getResources(), R.drawable.anz_icon_defult, null));
             this.gridViewAdapter.addVoiceItem(sampleVoiceAdapterItem);
         }
