@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Acitivity.MainActivity">
 
+
     <GridView
         android:id="@+id/voice_grid_view"
         android:layout_width="0dp"

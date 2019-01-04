@@ -6,9 +6,11 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.Acitivity.GridAdapter.VoiceAdapter.OnVoiceItemSelectedListnere;
 import anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.Acitivity.GridAdapter.VoiceAdapter.VoiceAdapterItem;
@@ -53,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         //ナビゲーションビュー
         this.navigationView = (BottomNavigationView) findViewById(R.id.navigation);
         this.navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -77,5 +80,36 @@ public class MainActivity extends AppCompatActivity {
         this.gridViewAdapter.notifyDataSetChanged();
 
     }
+
+    /**
+     * アクションバーのメニュー作成
+     * @param menu
+     * @return
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.actionbar, menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    /**
+     * アクションバーのメニューアイテムが選ばれたときの挙動
+     * @param item
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menuItem1:
+                //TODO アクションバーのメニュー選択時の挙動実装して
+                return true;
+
+                default:
+                    return super.onOptionsItemSelected(item);
+
+        }
+    }
+
 
 }
