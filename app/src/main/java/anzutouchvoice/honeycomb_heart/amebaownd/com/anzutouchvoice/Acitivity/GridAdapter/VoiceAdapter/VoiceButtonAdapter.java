@@ -99,10 +99,14 @@ public class VoiceButtonAdapter extends BaseAdapter {
         }
 
         //ViewHolderに参照を保持する
-        if(this.viewHolder == null) {
+
+        if(this.viewHolder == null || gridVoceiItemView.getTag() == null) {
             this.viewHolder = new ViewHolder();
             this.viewHolder.viceNameTextView = gridVoceiItemView.findViewById(R.id.voiceTitileTextView);
             this.viewHolder.voiceImageView = gridVoceiItemView.findViewById(R.id.voiceImageView);
+            gridVoceiItemView.setTag(this.viewHolder);
+        }else{
+            this.viewHolder = (ViewHolder)convertView.getTag();
         }
 
 
