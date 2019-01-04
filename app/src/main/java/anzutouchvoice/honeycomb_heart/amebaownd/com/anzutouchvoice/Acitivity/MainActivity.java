@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.Acitivity.GridAdapter.VoiceAdapter.OnVoiceItemSelectedListnere;
 import anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.Acitivity.GridAdapter.VoiceAdapter.VoiceAdapterItem;
 import anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.Acitivity.GridAdapter.VoiceAdapter.VoiceButtonAdapter;
 import anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.R;
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         //gridview
         this.voiceGridView = (GridView)findViewById(R.id.voice_grid_view);
+        this.voiceGridView.setOnItemClickListener(new OnVoiceItemSelectedListnere());
 
         this.gridViewAdapter = new VoiceButtonAdapter(this.getApplicationContext());
         this.voiceGridView.setAdapter(gridViewAdapter);
