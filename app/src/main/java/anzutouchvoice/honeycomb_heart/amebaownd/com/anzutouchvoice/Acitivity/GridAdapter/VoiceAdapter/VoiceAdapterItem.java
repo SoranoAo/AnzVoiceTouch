@@ -17,7 +17,7 @@ public class VoiceAdapterItem {
     private Drawable voiceImage;
 
     //ボイスファイルリソースID
-    private String voiceFileId;
+    private int voiceFileId;
 
 
     public String getTitile() {
@@ -44,11 +44,11 @@ public class VoiceAdapterItem {
         this.voiceImage = voiceImage;
     }
 
-    public String getVoiceFileId() {
+    public int getVoiceFileId() {
         return voiceFileId;
     }
 
-    public void setVoiceFileId(String voiceFileId) {
+    public void setVoiceFileId(int voiceFileId) {
         this.voiceFileId = voiceFileId;
     }
 }

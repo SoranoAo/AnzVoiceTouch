@@ -43,7 +43,7 @@ public class OnVoiceItemSelectedListnere implements AdapterView.OnItemClickListe
 
 
         //ボイス再生
-        this.mediaPlayer = MediaPlayer.create(view.getContext(), R.raw.decide);
+        this.mediaPlayer = MediaPlayer.create(view.getContext(), voiceAdapterItem.getVoiceFileId());
 
         //再生終了時のリスナー設定
         this.mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {

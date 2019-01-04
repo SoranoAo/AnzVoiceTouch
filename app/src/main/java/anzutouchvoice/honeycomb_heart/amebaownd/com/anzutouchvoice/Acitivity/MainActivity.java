@@ -67,10 +67,11 @@ public class MainActivity extends AppCompatActivity {
 
         //テスト用コード
         //TODO あとでテスト用コード消すこと
-        for(int i = 0 ; i < 10; i++) {
+        for(int i = 0 ; i < 100; i++) {
             VoiceAdapterItem sampleVoiceAdapterItem = new VoiceAdapterItem();
             sampleVoiceAdapterItem.setTitile("いーも"+ i);
             sampleVoiceAdapterItem.setVoiceImage(ResourcesCompat.getDrawable(getResources(), R.drawable.anz_icon_defult, null));
+            sampleVoiceAdapterItem.setVoiceFileId(R.raw.decide);
             this.gridViewAdapter.addVoiceItem(sampleVoiceAdapterItem);
         }
         this.gridViewAdapter.notifyDataSetChanged();
