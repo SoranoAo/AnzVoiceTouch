@@ -2,6 +2,7 @@ package anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.Acitivity;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -46,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_voice:
                     //ホームボタン押したときの挙動
-                    //TODO ホームボタンを押したときの挙動実装
 
                     //ボイスボタン以外からボイスボタンが選択された場合
                     //画面遷移する
@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
                     nowSelectedMode = item.getItemId();
 
                     return true;
+
                 case R.id.navigation_anzchan:
-                    //TODO 実装して
                     //あんずちゃんボタン以外からあんずちゃんボタンが選択された場合
                     //画面遷移する
                     if(nowSelectedMode != item.getItemId()) {
@@ -73,18 +73,16 @@ public class MainActivity extends AppCompatActivity {
                     nowSelectedMode = item.getItemId();
 
                     return true;
+
                 case R.id.navigation_omake:
-                    //TODO 実装して
                     if(nowSelectedMode != item.getItemId()) {
                         omakeFragmentReplace();
                     }
-
 
                     nowSelectedMode = item.getItemId();
 
                     return true;
             }
-
 
             return false;
         }
@@ -185,14 +183,17 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = null;
         switch (item.getItemId()) {
             case R.id.about_app_menu:
-                //TODO アクションバーのこのアプリについてメニュー選択時の挙動実装して
+                intent = new Intent(MainActivity.this,AboutAppActivity.class);
+                startActivity(intent);
+
                 return true;
 
             case R.id.about_anz_menu:
-                //TODO アクションバーのあんずちゃんについてメニュー選択時の挙動実装して
-
+                intent = new Intent(MainActivity.this,AboutAnzchanActivity.class);
+                startActivity(intent);
 
                 return true;
 

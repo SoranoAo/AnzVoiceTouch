@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">あんずちゃんタッチボイス</string>
+    <string name="about_app">このアプリについて</string>
+    <string name="about_anzchan">あんずちゃんについて</string>
     <string name="title_home">いもの声</string>
     <string name="title_dashboard">あんずちゃん</string>
     <string name="title_notifications">おまけ</string>

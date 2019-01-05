@@ -18,6 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Acitivity.AboutAppActivity"
+            android:label="@string/about_app">
+            >
+        </activity>
+        <activity
+            android:name=".Acitivity.AboutAnzchanActivity"
+            android:label="@string/about_anzchan">
+            
+        </activity>
     </application>
 
 </manifest>
