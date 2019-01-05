@@ -6,17 +6,11 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.GridView;
-import android.app.FragmentTransaction;
 
-import anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.Acitivity.GridAdapter.VoiceAdapter.OnVoiceItemSelectedListnere;
-import anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.Acitivity.GridAdapter.VoiceAdapter.VoiceAdapterItem;
-import anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.Acitivity.GridAdapter.VoiceAdapter.VoiceButtonAdapter;
 import anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.R;
 import fragment.VoiceSelectorFragment;
 
@@ -28,9 +22,11 @@ public class MainActivity extends AppCompatActivity {
     //音声選択用Fragment
     private VoiceSelectorFragment voiceSelectorFragment;
 
-
     //ナビゲーションView
     private BottomNavigationView navigationView;
+
+    //ナビゲーションぼたんで現在設定されているモード
+    private int nowSelectedMode = -1;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -38,18 +34,41 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.navigation_voice:
                     //ホームボタン押したときの挙動
                     //TODO ホームボタンを押したときの挙動実装
+
+                    //ボイスボタン以外からボイスボタンが選択された場合
+                    //画面遷移する
+                    if(nowSelectedMode != item.getItemId()) {
+                        voiceFragmentReplace();
+                    }else{
+
+                        //一番上までGridViewをscrollする
+                        voiceSelectorFragment.scrollToTop();
+
+                    }
+
+                    nowSelectedMode = item.getItemId();
+
                     return true;
-                case R.id.navigation_dashboard:
+                case R.id.navigation_anzchan:
                     //TODO 実装して
+
+                    nowSelectedMode = item.getItemId();
+
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_omake:
                     //TODO 実装して
+
+                    nowSelectedMode = item.getItemId();
+
                     return true;
             }
+
+
             return false;
         }
     };
@@ -64,16 +83,8 @@ public class MainActivity extends AppCompatActivity {
         this.frameLayout = (FrameLayout) findViewById(R.id.voice_selecter_framelayour);
 
         if (savedInstanceState == null) {
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-            // BackStackを設定
-            fragmentTransaction.addToBackStack(null);
-
-            this.voiceSelectorFragment = new VoiceSelectorFragment();
-            fragmentTransaction.replace(R.id.voice_selecter_framelayour, this.voiceSelectorFragment);
-
-            fragmentTransaction.commit();
+            this.voiceFragmentReplace();
 
         }
 
@@ -84,6 +95,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    private void voiceFragmentReplace(){
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        // BackStackを設定
+        fragmentTransaction.addToBackStack(null);
+
+        this.voiceSelectorFragment = new VoiceSelectorFragment();
+        fragmentTransaction.replace(R.id.voice_selecter_framelayour, this.voiceSelectorFragment);
+
+        fragmentTransaction.commit();
+
+    }
 
     /**
      * アクションバーのメニュー作成

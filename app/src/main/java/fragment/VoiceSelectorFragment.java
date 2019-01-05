@@ -76,5 +76,13 @@ public class VoiceSelectorFragment extends Fragment {
     }
 
 
+    /**
+     * gridViewを一番上までscrollする
+     */
+    public void scrollToTop(){
+
+        this.voiceGridView.smoothScrollToPosition(0);
+
+    }
 
 }
