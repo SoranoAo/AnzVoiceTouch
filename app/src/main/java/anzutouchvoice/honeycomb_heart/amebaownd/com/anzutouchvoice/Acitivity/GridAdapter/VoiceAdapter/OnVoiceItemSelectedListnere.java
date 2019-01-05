@@ -39,7 +39,7 @@ public class OnVoiceItemSelectedListnere implements AdapterView.OnItemClickListe
         //画面表示
         //Snackbar.make(view,voiceAdapterItem.getTitile(),Snackbar.LENGTH_LONG).show();
 
-        Toast.makeText(view.getContext(),voiceAdapterItem.getTitile(),Toast.LENGTH_LONG).show();
+        Toast.makeText(view.getContext(),voiceAdapterItem.getTitile(),Toast.LENGTH_SHORT).show();
 
 
         //ボイス再生
