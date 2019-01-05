@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.R;
+import fragment.AnzchanFragment;
+import fragment.OmakeFragment;
 import fragment.VoiceSelectorFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
 
     //音声選択用Fragment
     private VoiceSelectorFragment voiceSelectorFragment;
+
+    //あんずちゃんfragment
+    private AnzchanFragment anzchanFragment;
+
+    //おまけfragment
+    private OmakeFragment omakeFragment;
 
     //ナビゲーションView
     private BottomNavigationView navigationView;
@@ -56,12 +64,21 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_anzchan:
                     //TODO 実装して
+                    //あんずちゃんボタン以外からあんずちゃんボタンが選択された場合
+                    //画面遷移する
+                    if(nowSelectedMode != item.getItemId()) {
+                        anzchanFragmentReplace();
+                    }
 
                     nowSelectedMode = item.getItemId();
 
                     return true;
                 case R.id.navigation_omake:
                     //TODO 実装して
+                    if(nowSelectedMode != item.getItemId()) {
+                        omakeFragmentReplace();
+                    }
+
 
                     nowSelectedMode = item.getItemId();
 
@@ -80,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Fragment表示用のFrameLayout
-        this.frameLayout = (FrameLayout) findViewById(R.id.voice_selecter_framelayour);
+        this.frameLayout = (FrameLayout) findViewById(R.id.main_content_selecter_framelayour);
 
         if (savedInstanceState == null) {
 
@@ -96,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * 音声Fragmentへ遷移
+     */
     private void voiceFragmentReplace(){
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -104,7 +124,41 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.addToBackStack(null);
 
         this.voiceSelectorFragment = new VoiceSelectorFragment();
-        fragmentTransaction.replace(R.id.voice_selecter_framelayour, this.voiceSelectorFragment);
+        fragmentTransaction.replace(R.id.main_content_selecter_framelayour, this.voiceSelectorFragment);
+
+        fragmentTransaction.commit();
+
+    }
+
+    /**
+     * あんずちゃんFragmentへ遷移
+     */
+    private void anzchanFragmentReplace(){
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        // BackStackを設定
+        fragmentTransaction.addToBackStack(null);
+
+        this.anzchanFragment = new AnzchanFragment();
+        fragmentTransaction.replace(R.id.main_content_selecter_framelayour, this.anzchanFragment);
+
+        fragmentTransaction.commit();
+
+    }
+
+    /**
+     * おまけFragmentへ遷移
+     */
+    private void omakeFragmentReplace(){
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        // BackStackを設定
+        fragmentTransaction.addToBackStack(null);
+
+        this.omakeFragment = new OmakeFragment();
+        fragmentTransaction.replace(R.id.main_content_selecter_framelayour, this.omakeFragment);
 
         fragmentTransaction.commit();
 

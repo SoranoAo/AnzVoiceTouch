@@ -8,7 +8,7 @@
     tools:context=".Acitivity.MainActivity">
 
     <FrameLayout
-        android:id="@+id/voice_selecter_framelayour"
+        android:id="@+id/main_content_selecter_framelayour"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
