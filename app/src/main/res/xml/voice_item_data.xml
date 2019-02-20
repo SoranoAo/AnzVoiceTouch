@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map>
+
+    <entry title="イーヴィはいいぞ。" description="" image="anz_icon_defult.jpg" voiceFileId="eveiizo.m4a"/>
+    <entry title="イヴィヴィヴィ" description="" image="anz_icon_defult.jpg" voiceFileId="eveveve.m4a"/>
+    <entry title="漢字なんて・・・" description="" image="anz_icon_defult.jpg" voiceFileId="kannzinannte.m4a"/>
+    <entry title="みかん欲しいの？" description="" image="anz_icon_defult.jpg" voiceFileId="mikanhosii.m4a"/>
+    <entry title="洗濯バサミを・・・" description="" image="anz_icon_defult.jpg" voiceFileId="senntakubasami.m4a"/>
+    <entry title="タコ糸" description="" image="anz_icon_defult.jpg" voiceFileId="takoito.m4a"/>
+    <entry title="ちょっと何言ってるか" description="" image="anz_icon_defult.jpg" voiceFileId="tyotoyokuwakannai.m4a"/>
+    <entry title="やたらやばい" description="" image="anz_icon_defult.jpg" voiceFileId="yattarayabai.m4a"/>
+
+</map>
