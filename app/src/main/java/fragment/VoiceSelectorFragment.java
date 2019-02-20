@@ -67,7 +67,7 @@ public class VoiceSelectorFragment extends Fragment {
         //TODO あとでテスト用コード消すこと
         for (int i = 0; i < 100; i++) {
             VoiceAdapterItem sampleVoiceAdapterItem = new VoiceAdapterItem();
-            sampleVoiceAdapterItem.setTitile("いーも" + i);
+            sampleVoiceAdapterItem.setTitle("いーも" + i);
             sampleVoiceAdapterItem.setVoiceImage(ResourcesCompat.getDrawable(getResources(), R.drawable.anz_icon_defult, null));
             sampleVoiceAdapterItem.setVoiceFileId(R.raw.decide);
             this.gridViewAdapter.addVoiceItem(sampleVoiceAdapterItem);

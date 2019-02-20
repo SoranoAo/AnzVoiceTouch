@@ -1,13 +1,10 @@
 package anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.Acitivity.GridAdapter.VoiceAdapter;
 
 import android.media.MediaPlayer;
-import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
-
-import anzutouchvoice.honeycomb_heart.amebaownd.com.anzutouchvoice.R;
 
 /**
  * girdviewでItemが押されたときの動作を示すリスナー
@@ -37,9 +34,9 @@ public class OnVoiceItemSelectedListnere implements AdapterView.OnItemClickListe
 
 
         //画面表示
-        //Snackbar.make(view,voiceAdapterItem.getTitile(),Snackbar.LENGTH_LONG).show();
+        //Snackbar.make(view,voiceAdapterItem.getTitle(),Snackbar.LENGTH_LONG).show();
 
-        Toast.makeText(view.getContext(),voiceAdapterItem.getTitile(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(view.getContext(),voiceAdapterItem.getTitle(),Toast.LENGTH_SHORT).show();
 
 
         //ボイス再生

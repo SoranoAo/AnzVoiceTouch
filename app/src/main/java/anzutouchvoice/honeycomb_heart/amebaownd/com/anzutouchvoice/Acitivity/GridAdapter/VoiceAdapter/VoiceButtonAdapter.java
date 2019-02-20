@@ -112,7 +112,7 @@ public class VoiceButtonAdapter extends BaseAdapter {
 
         //Viewの内容を設定していく(holderが参照をもつためholderへセットすればよい)
         VoiceAdapterItem voiceAdapterItem = ((VoiceAdapterItem)getItem(position));
-        this.viewHolder.viceNameTextView.setText(voiceAdapterItem.getTitile());
+        this.viewHolder.viceNameTextView.setText(voiceAdapterItem.getTitle());
 
         this.viewHolder.voiceImageView.setImageDrawable(voiceAdapterItem.getVoiceImage());
 

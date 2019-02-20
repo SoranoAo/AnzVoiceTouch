@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 public class VoiceAdapterItem {
 
     //ボイスの名前
-    private String Titile;
+    private String title;
 
     //ボイスの説明
     private String description;
@@ -20,12 +20,12 @@ public class VoiceAdapterItem {
     private int voiceFileId;
 
 
-    public String getTitile() {
-        return Titile;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitile(String titile) {
-        Titile = titile;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
